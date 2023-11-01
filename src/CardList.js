@@ -27,7 +27,7 @@ const CardList = () => {
         <h1 className='f1'>Cat Friends</h1>
         <SearchBox searchChange={onSearchChange}/>
         {
-            filteredCats.map((user, i) => {
+          filteredCats.length > 0 ? filteredCats.map((user, i) => {
                 return (
                   <Card
                     key={filteredCats[i].id}
@@ -36,7 +36,7 @@ const CardList = () => {
                     email={filteredCats[i].email}
                   />
                 );
-            })
+            }) : <div>not found</div>
         }
     </div>);
 }
